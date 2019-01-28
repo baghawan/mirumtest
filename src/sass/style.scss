@@ -1,0 +1,74 @@
+@import "compass/reset";
+@import "compass/layout";
+@import "compass/css3";
+@import "components/setup";
+
+
+/* GLOBAL
+-------------------------------------------- */ 
+html {
+    position: relative;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body, input, textarea, select, button, a {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: "liga", "kern";
+}
+
+* {
+	-webkit-overflow-scrolling: touch;
+}
+
+*::selection {
+    background-color: $primary;
+}
+
+
+
+/* HEADER
+-------------------------------------------- */
+#header {}
+
+
+
+/* FOOTER
+-------------------------------------------- */
+#footer {}
+
+
+
+
+/* CONTENT
+-------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

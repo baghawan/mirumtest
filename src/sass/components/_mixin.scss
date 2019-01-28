@@ -1,0 +1,81 @@
+/* MIXIN KEYFRAMES
+-------------------------------------------- */
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content; 
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    } 
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+}
+
+/* MIXIN BUTTON
+-------------------------------------------- */
+@mixin btncolor($color, $background, $border, $width) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+    border-width: $width;
+
+    &:hover {
+        color: $color;
+        background-color: darken($background, 5%);
+        border-color: darken($border, 5%);
+    }
+
+    &:focus{
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 10%);
+    }
+
+    &:active{
+        color: $color;
+        background-color: darken($background, 12%);
+        border-color: darken($border, 12%);
+    }
+
+    &.disabled,
+    &[disabled]{
+        &:hover,
+        &:focus,
+        &:active {
+            
+        }
+    }
+}
+
+@mixin btncoloralt($color, $background, $border, $width) {
+    color: $color;
+    background-color: transparent;
+    border-color: $border;
+    border-width: $width;
+
+    &:hover {
+        color: $background;
+        background-color: $color;
+        border-color: transparent;
+    }
+
+    &:focus{
+        color: $background;
+        background-color: $color;
+        border-color: transparent;
+    }
+
+    &:active{
+        color: $background;
+        background-color: $color;
+        border-color: transparent;
+    }
+}
+
