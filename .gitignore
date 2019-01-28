@@ -1,0 +1,13 @@
+#Git
+!.gitkeep
+
+#Dev
+node_modules
+
+#Folder
+_html/app
+
+#OSX
+.DS_Store
+.idea
+.sass-cache
