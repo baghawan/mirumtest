@@ -1,0 +1,68 @@
+<section id="works" class="has-ver-padding">
+	
+
+	<div class="section--inner has-ver-padding">
+		<div class="section-head has-ver-padding text-center reveal-js">
+			<div class="accent_wrapper">
+				<span class="svg-holder svg-triangle-stroke">
+					<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#triangle-stroke"></use></svg>
+				</span>
+
+				<span class="svg-holder svg-plus">
+					<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#plus"></use></svg>
+				</span>
+			</div>
+			
+			<div class="container">
+				<h6 class="section-sub has-animate">Our featured works</h6>
+				<p class="section-title">
+					<span class="has-animate">We create engaging</span>
+					<span class="has-animate">experiences through</span>
+					<span class="has-animate">creativity &amp; craft</span>
+				</p>
+			</div>
+			
+		</div>
+
+		<div class="section-content has-ver-padding reveal-js">
+			<div class="owl-carousel slider"
+             data-sm="2"
+             data-md="3"
+             data-lg="3"
+             data-margin="20"
+             data-center="false"
+             data-stagepadding="150"
+             data-autoplay="false"
+             data-speed="800"
+             data-timeout="7000"
+             data-loop="false"
+             data-nav="true"
+             data-navskin="dark"
+             data-dots="false" >
+                @@include('work-item.html', {
+	                "img": "img1"
+	            })
+
+	            @@include('work-item.html', {
+	                "img": "img2"
+	            })
+
+	            @@include('work-item.html', {
+	                "img": "img3"
+	            })
+
+	            @@include('work-item.html', {
+	                "img": "img4"
+	            })
+
+	            @@include('work-item.html', {
+	                "img": "img1"
+	            })
+
+	            @@include('work-item.html', {
+	                "img": "img2"
+	            })
+            </div>
+		</div>
+	</div>
+</section>

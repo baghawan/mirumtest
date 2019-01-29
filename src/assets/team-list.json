@@ -1,0 +1,22 @@
+{
+    "teamList": {
+        "0": {
+            "name": "David Smith",
+            "position": "Co-Founder, CEO",
+            "avatar": "team-dummy-1.jpg",
+            "socials": ["facebook", "twitter", "instagram"]
+        },
+        "1": {
+            "name": "Amar Clemens",
+            "position": "Co-Founder, CTO",
+            "avatar": "team-dummy-2.jpg",
+            "socials": ["facebook", "twitter", "instagram"]
+        },
+        "2": {
+            "name": "Sunder Ime",
+            "position": "Co-Founder, CCO",
+            "avatar": "team-dummy-3.jpg",
+            "socials": ["facebook", "twitter"]
+        }
+    }
+}

@@ -42,7 +42,7 @@ $red:     #dc3545 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #fbbc05 !default;
 $green:   #28a745 !default;
-$teal:    #20c997 !default;
+$teal:    #1bf1ad !default;
 $cyan:    #17a2b8 !default;
 
 $colors: () !default;
@@ -66,7 +66,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $blue !default;
+$primary:       $teal !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -159,7 +159,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                #393939 !default;
+$body-color:                #303030 !default;
 
 
 // Links
@@ -169,7 +169,7 @@ $body-color:                #393939 !default;
 $link-color:                              theme-color("primary") !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        darken($link-color, 15%) !default;
-$link-hover-decoration:                   underline !default;
+$link-hover-decoration:                   none !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;
 
@@ -226,7 +226,7 @@ $container-max-widths: map-merge(
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           40px !default;
+$grid-gutter-width:           30px !default;
 
 
 // Components
@@ -275,7 +275,7 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      "Product Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
@@ -286,7 +286,7 @@ $font-size-sm:                ($font-size-base * .875) !default;
 
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
-$font-weight-normal:          normal !default;
+$font-weight-normal:          400 !default;
 $font-weight-bold:            bold !default;
 $font-weight-bolder:          bolder !default;
 
@@ -302,8 +302,8 @@ $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        inherit !default;
-$headings-font-weight:        normal !default;
-$headings-line-height:        1.2 !default;
+$headings-font-weight:        600 !default;
+$headings-line-height:        normal !default;
 $headings-color:              inherit !default;
 
 $display1-size:               6rem !default;
@@ -311,16 +311,16 @@ $display2-size:               5.5rem !default;
 $display3-size:               4.5rem !default;
 $display4-size:               3.5rem !default;
 
-$display1-weight:             normal !default;
-$display2-weight:             normal !default;
-$display3-weight:             normal !default;
-$display4-weight:             normal !default;
+$display1-weight:             700 !default;
+$display2-weight:             700 !default;
+$display3-weight:             700 !default;
+$display4-weight:             700 !default;
 $display-line-height:         $headings-line-height !default;
 
-$lead-font-size:              ($font-size-base * 1.5) !default;
+$lead-font-size:              ($font-size-base * 1.75) !default;
 $lead-font-weight:            normal !default;
 
-$small-font-size:             80% !default;
+$small-font-size:             75% !default;
 
 $text-muted:                  $gray-600 !default;
 

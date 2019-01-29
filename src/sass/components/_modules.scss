@@ -1,8 +1,411 @@
-/* COMPONENTS
-   Basically all elements that reused or categorized as module
---------------------------------------------------------------------- */
+/* UTILITIES
+------------------- */
+.container {
+    &.narrow-width {
+        @media (min-width: $device-lg) {
+            max-width: 1000px;
+        }
+    }
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.has-ver-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.fheight {
+	height: 100%;
+}
+
+.no-click {
+    pointer-events: none;
+}
+
+.pos-abs {
+    position: absolute;
+
+    &.abs-full {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    &.abs-center {
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+    }
+}
 
 
+
+
+/* FLEXBOX
+------------------- */
+
+.flexed {
+    -webkit-box-align: center;
+    -o-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+
+    &.halign-justify {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    &.halign-center {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    &.halign-right {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+}
+
+.flexed-desktop {
+    @media (min-width: $device-md) {
+        -webkit-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: box;
+        display: flex;
+
+        &.halign-justify {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+
+        &.halign-center {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        &.halign-right {
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+    }
+}
+
+.flexed-mobile {
+    @media (max-width: $device-md - 1px) {
+        -webkit-box-align: center;
+        -o-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: box;
+        display: flex;
+
+        &.halign-justify {
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+
+        &.halign-center {
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        &.halign-right {
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+        }
+    }
+}
+
+
+
+
+/* REUSABLE ELEMENT
+------------------- */
+
+.accent_wrapper {
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+}
+
+.svg-holder {
+    display: inline-block;
+    position: absolute;
+
+    @media (max-width: $device-xl - 1px) {
+		@include transform(scale(0.8));
+	}
+
+    svg {
+        width: 100%;
+        height: 100%;
+        @include transition(all 100ms ease-in-out);
+    }
+
+    &.svg-plus {
+    	width: 24px;
+    	height: 24px;
+    }
+
+    &.svg-circle-small {
+    	width: 38px;
+    	height: 38px;
+    }
+
+    &.svg-circle-large {
+    	width: 80px;
+    	height: 80px;
+    }
+
+    &.svg-triangle,
+    &.svg-triangle-stroke {
+    	width: 28px;
+    	height: 28px;
+    }
+
+    &.svg-diagonal-line {
+    	width: 120px;
+    	height: 120px;
+    }
+}
+
+.has-animate {
+	opacity: 0;
+	@include transform(translateY(40px));
+}
+
+.in-view .has-animate {
+	opacity: 1;
+	@include transform(translateY(0));
+	@include transition(transform 700ms cubic-bezier(.23,1,.32,1) 300ms, opacity 700ms cubic-bezier(.23,1,.32,1) 300ms);
+}
+
+.section-head {
+	position: relative;
+
+	@media (max-width: $device-md - 1px) {
+		text-align: center;
+	}
+
+	.section-sub {
+		@extend .ls-lg;
+		@extend .txt-uppercase;
+
+		margin-bottom: 1.6rem;
+	}
+
+	.lead {
+		position: relative;
+	}
+
+	.section-title {
+		@extend .txt-uppercase;
+		@extend .no-margin;
+		@extend .fw-700;
+
+		line-height: 1.2;
+		font-size: 1.75rem;
+
+		span {
+			display: block;
+			position: relative;
+		}
+
+		@media (min-width: $device-md) {
+			font-size: 3.25rem;
+		}
+	}
+
+	&.in-view {
+		.section-title {
+			span {
+				&:nth-of-type(1){
+					@include transition(transform 1400ms cubic-bezier(.23,1,.32,1) 400ms, opacity 1400ms cubic-bezier(.23,1,.32,1) 400ms);
+				}
+
+				&:nth-of-type(2){
+					@include transition(transform 1400ms cubic-bezier(.23,1,.32,1) 600ms, opacity 1400ms cubic-bezier(.23,1,.32,1) 600ms);
+				}
+
+				&:nth-of-type(3){
+					@include transition(transform 1400ms cubic-bezier(.23,1,.32,1) 900ms, opacity 1400ms cubic-bezier(.23,1,.32,1) 900ms);
+				}
+				
+			}
+
+			@media (min-width: $device-md) {
+				font-size: 3.25rem;
+			}
+		}
+	}
+}
+
+.team-thumb {
+	.team-thumb-link {
+		@extend .flexed;
+		flex-wrap: wrap;
+
+		padding: 1rem;
+		background-color: transparent;
+
+		@include transition(background-color 300ms ease-in-out);
+
+		&:hover {
+			background-color: lighten($teal, 15%);
+		}
+
+		> * {
+			width: 100%;
+		}
+
+		.team-thumb-image {
+			flex: 0 0 40%;
+			max-width: 40%;
+			margin-bottom: 0;
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		.team-thumb-detail {
+			flex: 0 0 60%;
+			max-width: 60%;
+			padding: 10px;
+
+			.ttd-name {
+				margin-bottom: 0;
+			}
+
+			.ttd-position {
+				color: #666;
+				font-size: 14px;
+				margin-bottom: .5rem;
+			}
+
+			.ttd-social-list {
+				li {
+					display: inline-block;
+					vertical-align: middle;
+					font-size: 13px;
+
+					& + li {
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+
+		@media (min-width: $device-md) and (max-width: $device-lg - 1px) {
+			.team-thumb-image {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+
+			.team-thumb-detail {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.work-item {
+	a {
+		display: block;
+		position: relative;
+
+		.work-caption {
+			padding: 1.5rem;
+			background-color: rgba(27, 241, 173, 0.8);
+			color: #fff;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+
+			display: -webkit-box;
+		    display: -ms-flexbox;
+		    display: box;
+		    display: flex;
+
+		    opacity: 0;
+		    visibility: none;
+		    @include transition(opacity 300ms ease-in-out);
+
+			.work-caption_wrapper {
+				width: 100%;
+
+				-ms-flex-item-align: end;
+				align-self: flex-end;
+
+				position: relative;
+				opacity: 0;
+				@include transform(translateY(40px));
+				@include transition(transform 200ms cubic-bezier(.23,1,.32,1) 0s, opacity 200ms cubic-bezier(.23,1,.32,1) 0s);
+
+			    .work-caption-title {
+					@extend .h4;
+					@extend .fw-700;
+
+					line-height: 1.1;
+				}
+
+				.work-caption-author {
+					@extend .fw-600;
+
+					font-size: 12px;
+					margin-bottom: 0;
+				}
+			}
+
+			@media (max-width: $device-md - 1px) {
+				padding: 1rem;
+			}
+		}
+
+		&:hover {
+			.work-caption {
+				opacity: 1;
+		    	visibility: visible;
+
+		    	.work-caption_wrapper {
+		    		opacity: 1;
+		    		@include transform(translateY(0));
+					@include transition(transform 400ms cubic-bezier(.23,1,.32,1) 0s, opacity 200ms cubic-bezier(.23,1,.32,1) 0s);
+		    	}
+			}
+		}
+	}
+}
 
 
 

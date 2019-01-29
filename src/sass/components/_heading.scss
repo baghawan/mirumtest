@@ -1,2 +1,54 @@
 /* HEADING
 -------------------------------------------- */
+.txt-uppercase {
+	text-transform: uppercase;
+}
+
+.ls-md {
+	letter-spacing: 1.5px;
+}
+
+.ls-lg {
+	letter-spacing: 2.5px;
+}
+
+.fw-300 {
+	font-weight: 300;
+}
+
+.fw-400 {
+	font-weight: 400;
+}
+
+.fw-600 {
+	font-weight: 600;
+}
+
+.fw-700 {
+	font-weight: 700;
+}
+
+
+
+
+@media (max-width: $device-md - 1px) {
+	h1, .h1 {
+		font-size: 2.5rem;
+	}
+
+	h2, .h2 {
+		font-size: 2rem;
+	}
+
+	h3, .h3 {
+		font-size: 1.5rem;
+	}
+
+	h4, .h4 {
+		font-size: 1.2rem;
+	}
+
+	h5, .h5 {
+		font-size: 1rem;
+	}
+}

@@ -16,6 +16,7 @@ var gulp        = require('gulp'),
 
 gulp.task('js', function(){
     gulp.src([
+            './node_modules/lodash/lodash.min.js',
             './node_modules/bootstrap/dist/js/bootstrap.min.js',
             './node_modules/retinajs/dist/retina.min.js',
             './node_modules/owl.carousel/dist/owl.carousel.min.js',

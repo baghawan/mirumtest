@@ -1,7 +1,15 @@
-$(function(){});
+$(function(){
+    components.firstInit();
+
+    
+
+    slider.init('.owl-carousel');
+});
 
 
-$(window).load(function(){});
+$(window).load(function(){
+    components.animateOnView('.reveal-js');
+});
 
 
 //Global function
@@ -59,6 +67,15 @@ var components = (function(){
         }
     };
 
+    function setHeroHeight(){
+        var $el = $('#hero');
+        var wHeight = $(window).height();
+
+        $el.css({
+            'height' : (wHeight * 0.8) + 'px'
+        })
+    }
+
     function headerInit(){
         var $header = $('#header');
 
@@ -97,7 +114,9 @@ var components = (function(){
 
         $(window).on('ready resize',function(e){
             responsiveCheck();
+            setHeroHeight();
             headerInit();
+            
         });
         
     };
@@ -132,8 +151,9 @@ var slider = (function(){
             values['nav'] = false;
             values['navskin'] = 'light';
             values['dots'] = false;
-            values['stagepadding'] = 0;
             values['drag'] = true;
+            values['stagepadding'] = 0;
+            
             
             values['lg'] = 1; // items on lg
             values['md'] = 1; // items on md
@@ -171,13 +191,20 @@ var slider = (function(){
                 ],
                 responsive: {
                     0: {
-                        items: values['sm']
+                        items: values['sm'],
+                        margin: values['margin'] / 2,
+                        stagePadding : values['stagepadding'] / 3
                     },
                     768: {
-                        items: values['md']
+                        items: values['md'],
+                        margin: values['margin'] / 2,
+                        stagePadding : values['stagepadding'] / 2
+                        
                     },
                     1200: {
-                        items: values['lg']
+                        items: values['lg'],
+                        margin: values['margin'],
+                        stagePadding : values['stagepadding']
                     }
                 }
             });

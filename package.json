@@ -24,6 +24,7 @@
   "dependencies": {
     "bootstrap": "^4.1.3",
     "owl.carousel": "^2.3.4",
-    "retinajs": "^2.1.3"
+    "retinajs": "^2.1.3",
+    "lodash": "^4.17.5"
   }
 }
