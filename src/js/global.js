@@ -77,7 +77,94 @@ var components = (function(){
     }
 
     function headerInit(){
-        var $header = $('#header');
+        var $header   = $('#header');
+        var burger    = $('#menu-mobile-btn');
+        var $nav      = $('.menu-nav');
+        var $mainMenu = $nav.children('.menu-nav-list');
+
+        var start     = $('#hero').height();
+
+        if($(window).width() < 992) {
+            $('#hero').find('.cloned-nav').remove();
+
+            $mainMenu.css({
+                'padding-top': $header.outerHeight() + 20 + 'px'
+            })
+
+            burger.on('click', function(e){
+                $('html').toggleClass('mobile-menu-show');
+                $(this).toggleClass('active');
+
+                if(!$header.hasClass('header-invert')){
+                    $header.addClass('header-invert');
+                }
+
+                $nav.slideToggle(300, function(e){
+
+                    $(this).find('li').each(function(i){
+                        var $this = $(this);
+
+                        setTimeout(function(){
+                            $this.toggleClass('shown');
+
+                        }, 50 * i);
+                    })
+                });
+            });
+
+        } else {
+            $nav
+            .clone().attr('style', '')
+            .removeAttr('id')
+            .addClass('cloned-nav')
+            .prependTo('#hero')
+            .show()
+            .find('*').removeAttr('style').removeClass('shown');
+
+            $mainMenu.css({
+                'padding-top': ''
+            })
+
+            burger.off('click').removeClass('active');
+            $header.removeClass('header-invert');
+            $('html').removeClass('mobile-menu-show');
+
+            $nav.find('li').removeClass('shown');
+
+            $nav.css({
+                'display': ''
+            });
+
+            
+            
+        }
+
+
+
+        $(window).scroll(function(event){
+            if($(window).scrollTop() > (start - 60) && $(window).scrollTop() < start){
+                $header.addClass('header-off');
+
+                $header.css({
+                    'position': 'absolute'
+                });
+
+            } else if($(window).scrollTop() > start){
+                $header.removeClass('header-off');
+                $header.addClass('header-invert');
+
+                $header.css({
+                    'position': 'fixed'
+                });
+
+            } else {
+                $header.removeClass('header-off header-invert');
+
+                $header.css({
+                    'position': 'absolute'
+                });
+            }
+        });
 
     };
 

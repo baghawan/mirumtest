@@ -148,6 +148,72 @@
 /* REUSABLE ELEMENT
 ------------------- */
 
+.list-social {
+	li {
+		@extend .d-inline-block;
+
+		font-size: 1.5rem;
+
+		i:before {
+			display: block;
+		}
+	}
+}
+
+.burger-menu {
+    display: block;
+    position: relative;
+    background-color: transparent;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    outline: 0 !important;
+    box-shadow: none;
+    border: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        @include transition(all 250ms ease-in-out);
+
+        & + span {
+            margin-top: 4px;
+        }
+
+        &:nth-child(1) {
+            transform-origin: 0% 0%;
+        }
+
+        &:nth-child(2) {
+            transform-origin: 4px 0px;
+        }
+
+        &:nth-child(3) {
+            transform-origin: 0% 100%;
+        }
+    }
+
+    &.active {
+        span:nth-child(1) {
+            @include transform(rotate(45deg) translate(1px, -5px));
+        }
+
+        span:nth-child(2) {
+            opacity: 0;
+            @include transform(rotate(0deg) scale(0.2, 0.2));
+        }
+
+        span:nth-child(3) {
+            @include transform(rotate(-45deg) translate(1px, 5px));
+        }
+    }
+}
+
 .accent_wrapper {
 	position: absolute;
 	z-index: 0;
